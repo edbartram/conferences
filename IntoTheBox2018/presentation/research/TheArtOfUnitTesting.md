@@ -4,7 +4,7 @@ Unit Tests should be
 2. readable
 3. trustworthy
 
-## Chapeter 1 - The Basics of Unit Testing
+## Chapter 1 - The Basics of Unit Testing
 1.2 - Properties of a good unit test
 * automated and repeatable
 * easy to implement
