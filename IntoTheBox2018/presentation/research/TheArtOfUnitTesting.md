@@ -32,3 +32,22 @@ Unit Tests should be
 * Refactoring means changing a piece of code without changing its functionality.
 
 ## Chapter 2 - A First Unit Test
+
+2.3.2 
+* Test every method with logic even if it simple. Logic can fail and you want to know when it does.
+* Since MXUnit and TestBox both require "test" in the name, we should use the following:  
+> test[UnitOfWork]_[Scenario]_[ExpectedBehavior]  
+for example, for the method isValidFileName(), we could have the following test:
+> testIsValidFilename_badExtension_returnsFalse
+* The book suggests isolating your tests from your code in a separate project. My experience is that it is easy to keep your tests encapsulated in a tests folder alongside your code which allows you to run your tests as part of a build process and only deploy if all the tests run. And only the code gets deployed, not the tests folder to keep your application clean.
+
+2.3.3 
+* MXUnit and TestBox do not have the attribute scheme described in the book that NUnit has, instead, they simply require the keyword "test" in the test name.
+* Like NUnit, MXUnit and TestBox both require tests to be public methods
+
+2.4 A unit test usually comprises three main actions:
+1. Arrange objects, creating and setting them up as necessary
+2. Act on an object
+3. Assert that something is expected
+
+2.4.1 The Assert class contains methods you can use to test your code. If the assertion fails, your framework will let you know with a message. Optionally you can tell the Assert class what message to display, but I would highly discourage doing this as the framework's messages are all very good and using it provides a standardized way failures are reported to the developer running the tests. The book makes a strong case discouraging custom messages and suggests if you feel you need to, you probably haven't written a clear enough test name.
